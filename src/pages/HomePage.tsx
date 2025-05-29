@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import HeroSection from '../components/HomePageSections/HeroSection';
 import AboutSection from '../components/HomePageSections/AboutSection';
 import ServicesSection from '../components/HomePageSections/ServicesSection';
-import TestimonialsSection from '../components/HomePageSections/TestimonialsSection';
+//import TestimonialsSection from '../components/HomePageSections/TestimonialsSection';
 import TeamSection from '../components/HomePageSections/TeamSection';
 
 const HomePage: React.FC = () => {
@@ -17,7 +17,7 @@ const HomePage: React.FC = () => {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <TeamSection />
     </motion.div>
   );

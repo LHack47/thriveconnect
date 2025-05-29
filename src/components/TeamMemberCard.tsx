@@ -25,7 +25,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
         <img 
           src={imageUrl} 
           alt={name} 
-          className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-64 object-contain transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center">
           <div className="p-4 flex space-x-4 mb-2">

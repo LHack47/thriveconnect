@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, LifeBuoy } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Logo from '../assets/TCLogo.png'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,16 +35,18 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center group">
-            <motion.div 
-              className="text-primary-600 mr-2"
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.5 }}
-            >
-              <LifeBuoy size={32} className="text-primary-600" />
-            </motion.div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent">
-              Thrive Connect
-            </span>
+              {/* <motion.div 
+                className="text-primary-600 mr-2"
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.5 }}
+              >
+                <LifeBuoy size={32} className="text-primary-600" />
+              </motion.div>*/}
+              <img src={Logo} alt="Logo" width={32}/>
+
+              <span className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent">
+                Thrive Connect
+              </span>
           </Link>
 
           {/* Desktop Navigation */}

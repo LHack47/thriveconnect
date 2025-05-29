@@ -96,7 +96,7 @@ const HeroSection: React.FC = () => {
             />
             
             {/* Stats Overlay */}
-            <motion.div 
+            {/* <motion.div 
               className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -127,7 +127,7 @@ const HeroSection: React.FC = () => {
                   <p className="text-gray-600 text-sm">Pilot Launch</p>
                 </div>
               </div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </div>

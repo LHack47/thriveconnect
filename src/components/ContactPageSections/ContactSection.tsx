@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+//import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import ContactForm from './ContactForm';
 
 const ContactSection: React.FC = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <motion.div
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-12">
+         {/*  <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -121,7 +121,7 @@ const ContactSection: React.FC = () => {
                 </motion.a>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
           
           <motion.div 
             className="bg-gray-50 p-8 rounded-xl shadow-sm"
@@ -134,7 +134,7 @@ const ContactSection: React.FC = () => {
           </motion.div>
         </div>
 
-        <motion.div 
+        {/* <motion.div 
           className="mt-20"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -152,7 +152,7 @@ const ContactSection: React.FC = () => {
               title="Thrive Connect Location"
             ></iframe>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

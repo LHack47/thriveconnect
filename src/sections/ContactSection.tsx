@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionHeading from '../components/SectionHeading';
 import ContactForm from '../components/ContactForm';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+//import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
   return (
@@ -13,8 +13,8 @@ const ContactSection: React.FC = () => {
           centered={true}
         />
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-12">
+          {/* <div>
             <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
             
             <div className="space-y-6 mb-8">
@@ -87,7 +87,7 @@ const ContactSection: React.FC = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
           
           <div className="bg-gray-50 p-8 rounded-xl shadow-sm">
             <h3 className="text-2xl font-semibold mb-6">Send Us a Message</h3>

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, LifeBuoy } from 'lucide-react';
+import { Mail, LifeBuoy } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-4">
@@ -16,7 +16,13 @@ const Footer: React.FC = () => {
             <p className="text-gray-400 mb-6">
               Empowering connections and fostering growth in communities worldwide.
             </p>
-            <div className="flex space-x-4">
+            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+
+            <li className="flex items-center">
+                <Mail size={18} className="text-primary-500 mr-2" />
+                <span className="text-gray-400">info@thriveconnect.com</span>
+              </li>
+            {/* <div className="flex space-x-4">
               <a 
                 href="#" 
                 className="text-gray-400 hover:text-primary-500 transition-colors"
@@ -45,7 +51,7 @@ const Footer: React.FC = () => {
               >
                 <Linkedin size={20} />
               </a>
-            </div>
+            </div> */}
           </div>
           
           {/* Quick Links */}
@@ -63,25 +69,17 @@ const Footer: React.FC = () => {
           
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-3">
-              <li className="flex items-start">
+              {/* <li className="flex items-start">
                 <MapPin size={18} className="text-primary-500 mr-2 mt-1" />
                 <span className="text-gray-400">123 Innovation Way, San Francisco, CA 94107</span>
               </li>
               <li className="flex items-center">
                 <Phone size={18} className="text-primary-500 mr-2" />
                 <span className="text-gray-400">(123) 456-7890</span>
-              </li>
-              <li className="flex items-center">
-                <Mail size={18} className="text-primary-500 mr-2" />
-                <span className="text-gray-400">info@thriveconnect.com</span>
-              </li>
+              </li> */}
+              
             </ul>
-          </div>
-          
-          {/* Newsletter */}
-          <div>
             <h3 className="text-lg font-semibold mb-4">Stay Updated</h3>
             <p className="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates.</p>
             <form className="flex">
@@ -100,6 +98,11 @@ const Footer: React.FC = () => {
               </button>
             </form>
           </div>
+          
+          {/* Newsletter
+          <div>
+            
+          </div> */}
         </div>
         
         <div className="border-t border-gray-800 pt-8">

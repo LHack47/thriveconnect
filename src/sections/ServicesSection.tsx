@@ -48,7 +48,7 @@ const ServicesSection: React.FC = () => {
     <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 md:px-6">
         <SectionHeading 
-          title="Our Services"
+          title="Our Pilot"
           subtitle="Comprehensive solutions designed to strengthen communities and foster meaningful connections."
           centered={true}
         />

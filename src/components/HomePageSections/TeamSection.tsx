@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, Twitter } from 'lucide-react';
 import SectionHeading from '../SectionHeading';
+import ACLogo from "../../assets/ACLogo.png"
+import ENLogo from "../../assets/ENLogo.jpg"
+import RBILogo from "../../assets/RBILogo.png"
 
 interface TeamMemberProps {
   name: string;
@@ -36,7 +39,7 @@ const TeamMemberCard: React.FC<TeamMemberProps> = ({
         <motion.img 
           src={imageUrl} 
           alt={name} 
-          className="w-full h-64 object-cover"
+          className="w-full h-64 object-contain"
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.5 }}
         />
@@ -83,9 +86,9 @@ const TeamMemberCard: React.FC<TeamMemberProps> = ({
 const TeamSection: React.FC = () => {
   const teamMembers = [
     {
-      name: "Dr. Elena Martinez",
-      role: "Founder & CEO",
-      imageUrl: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      name: "Elevate Academy",
+      role: "Nonprofit Lead",
+      imageUrl: RBILogo,
       bio: "With over 15 years of experience in community development, Elena founded Thrive Connect to bridge the gap between organizations and the communities they serve.",
       socialLinks: {
         linkedin: "#",
@@ -93,9 +96,9 @@ const TeamSection: React.FC = () => {
       }
     },
     {
-      name: "Marcus Chen",
-      role: "Chief Strategy Officer",
-      imageUrl: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      name: "Empowered Network",
+      role: "Nonprofit Lead",
+      imageUrl: ENLogo,
       bio: "Marcus brings extensive experience in strategic planning and organizational development, helping communities maximize their impact.",
       socialLinks: {
         linkedin: "#",
@@ -103,18 +106,28 @@ const TeamSection: React.FC = () => {
       }
     },
     {
-      name: "Olivia Washington",
-      role: "Director of Programs",
-      imageUrl: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      bio: "Olivia oversees our innovative programs, ensuring they meet the unique needs of diverse communities while driving measurable outcomes.",
+      name: "AnnieCannons",
+      role: "Nonprofit Lead",
+      imageUrl: ACLogo,
+      bio: "AnnieCannons is dedicated to training, prepare, and connecting individuals who have experienced human trafficking to sustainable careers in tech.",
       socialLinks: {
         linkedin: "#"
       }
     },
     {
-      name: "James Okonkwo",
-      role: "Head of Global Partnerships",
-      imageUrl: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      name: "Impact Rising",
+      role: "Head of Monitoring and Evaluation",
+      imageUrl: "",
+      bio: "James builds and nurtures our network of global partners, creating opportunities for collaboration and knowledge exchange across borders.",
+      socialLinks: {
+        linkedin: "#",
+        twitter: "#"
+      }
+    },
+    {
+      name: "HBS",
+      role: "Pro Bono Corporate Partnership Liason",
+      imageUrl: "",
       bio: "James builds and nurtures our network of global partners, creating opportunities for collaboration and knowledge exchange across borders.",
       socialLinks: {
         linkedin: "#",

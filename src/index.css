@@ -2,12 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Afrah';
+  src: url('assets/afrah-regular.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  @apply text-gray-800;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Afrah', sans-serif;
+}
+
+body {
+  font-family: 'Afrah', sans-serif;
   @apply text-gray-800;
 }
 
