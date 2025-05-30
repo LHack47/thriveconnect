@@ -89,7 +89,7 @@ const TeamSection: React.FC = () => {
       name: "Elevate Academy",
       role: "Nonprofit Lead",
       imageUrl: RBILogo,
-      bio: "With over 15 years of experience in community development, Elena founded Thrive Connect to bridge the gap between organizations and the communities they serve.",
+      bio: "Elevate Academy provides online classes, coaching, and a supportive community to help survivors achieve 'job readiness' after escape, regardless of their location.",
       socialLinks: {
         linkedin: "#",
         twitter: "#"
@@ -99,7 +99,7 @@ const TeamSection: React.FC = () => {
       name: "Empowered Network",
       role: "Nonprofit Lead",
       imageUrl: ENLogo,
-      bio: "Marcus brings extensive experience in strategic planning and organizational development, helping communities maximize their impact.",
+      bio: "Empowered Network (EN) has been collaborating with trafficking survivors beyond the crisis to achieve their economic freedom.",
       socialLinks: {
         linkedin: "#",
         twitter: "#"
@@ -118,7 +118,7 @@ const TeamSection: React.FC = () => {
       name: "Impact Rising",
       role: "Head of Monitoring and Evaluation",
       imageUrl: "",
-      bio: "James builds and nurtures our network of global partners, creating opportunities for collaboration and knowledge exchange across borders.",
+      bio: "A consulting company specializing in designing and leading collective impact initiatives, providing strategic guidance, shared impact measurement, and coordination to ensure alignment among partners.",
       socialLinks: {
         linkedin: "#",
         twitter: "#"
@@ -128,7 +128,7 @@ const TeamSection: React.FC = () => {
       name: "HBS",
       role: "Pro Bono Corporate Partnership Liason",
       imageUrl: "",
-      bio: "James builds and nurtures our network of global partners, creating opportunities for collaboration and knowledge exchange across borders.",
+      bio: "Pro bono consulting services tasked with representing the corporate lens during the pilot by facilitating focus groups, gathering actionable insights, and strategizing on the right companies and quantity for corporate partnerships.",
       socialLinks: {
         linkedin: "#",
         twitter: "#"
