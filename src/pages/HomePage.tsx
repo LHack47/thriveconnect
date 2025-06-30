@@ -99,7 +99,7 @@ const HomePage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
-              A tech-enabled ecosystem linking survivors of human trafficking to meaningful career paths with best-in-class companies committed to inclusive hiring.
+              A tech-enabled ecosystem that links survivors of human trafficking to meaningful career paths with high demand roles at best-in-class companies.
             </motion.p>
             
             <motion.div 
