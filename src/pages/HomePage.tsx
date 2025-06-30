@@ -424,7 +424,7 @@ const HomePage: React.FC = () => {
               <p className="text-gray-600 leading-relaxed">
                 Pro bono consulting services tasked with representing the corporate lens during the pilot by facilitating focus groups, gathering actionable insights, and strategizing on the right companies and quantity for corporate partnerships.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
