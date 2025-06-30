@@ -35,24 +35,18 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center group">
-              {/* <motion.div 
-                className="text-primary-600 mr-2"
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.5 }}
-              >
-                <LifeBuoy size={32} className="text-primary-600" />
-              </motion.div>*/}
-              <img src={Logo} alt="Logo" width={32}/>
-
-              <span className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent">
-                Thrive Connect
-              </span>
+            <img src={Logo} alt="ThriveConnect Logo" width={32} className="mr-2"/>
+            <span className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent">
+              ThriveConnect
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             <NavLink to="/" active={location.pathname === '/'}>Home</NavLink>
-            <NavLink to="/contact" active={location.pathname === '/contact'}>Contact</NavLink>
+            <NavLink to="/about" active={location.pathname === '/about'}>About Us</NavLink>
+            <NavLink to="/partners" active={location.pathname === '/partners'}>Partners</NavLink>
+            <NavLink to="/contact" active={location.pathname === '/contact'}>Contact Us</NavLink>
           </div>
 
           {/* Mobile Navigation Toggle */}
@@ -78,7 +72,9 @@ const Navbar = () => {
           >
             <div className="flex flex-col space-y-4 px-4">
               <NavLink to="/" active={location.pathname === '/'}>Home</NavLink>
-              <NavLink to="/contact" active={location.pathname === '/contact'}>Contact</NavLink>
+              <NavLink to="/about" active={location.pathname === '/about'}>About Us</NavLink>
+              <NavLink to="/partners" active={location.pathname === '/partners'}>Partners</NavLink>
+              <NavLink to="/contact" active={location.pathname === '/contact'}>Contact Us</NavLink>
             </div>
           </motion.div>
         )}

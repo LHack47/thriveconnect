@@ -6,7 +6,6 @@ const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
     message: '',
   });
   
@@ -35,7 +34,7 @@ const ContactForm: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     
@@ -51,15 +50,25 @@ const ContactForm: React.FC = () => {
     if (validate()) {
       setIsSubmitting(true);
       
-      // Simulate API call
+      // Create mailto link
+      const subject = encodeURIComponent('ThriveConnect Contact Form Submission');
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      );
+      const mailtoLink = `mailto:jmerrick@empowerhernetwork.org?subject=${subject}&body=${body}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      // Simulate form submission completion
       setTimeout(() => {
         setIsSubmitting(false);
         setSubmitSuccess(true);
-        setFormData({ name: '', email: '', subject: '', message: '' });
+        setFormData({ name: '', email: '', message: '' });
         
         // Reset success message after 5 seconds
         setTimeout(() => setSubmitSuccess(false), 5000);
-      }, 1500);
+      }, 1000);
     }
   };
 
@@ -72,7 +81,7 @@ const ContactForm: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Thank you for your message! We'll get back to you soon.
+          Thank you for your message! Your email client should have opened with your message ready to send.
         </motion.div>
       )}
       
@@ -88,10 +97,10 @@ const ContactForm: React.FC = () => {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          className={`w-full px-4 py-3 rounded-lg border ${errors.name ? 'border-error-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-primary-500`}
+          className={`w-full px-4 py-3 rounded-lg border ${errors.name ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-primary-500`}
           placeholder="Your name"
         />
-        {errors.name && <p className="mt-1 text-sm text-error-500">{errors.name}</p>}
+        {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
       </div>
       
       <div>
@@ -106,36 +115,15 @@ const ContactForm: React.FC = () => {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className={`w-full px-4 py-3 rounded-lg border ${errors.email ? 'border-error-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-primary-500`}
+          className={`w-full px-4 py-3 rounded-lg border ${errors.email ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-primary-500`}
           placeholder="your.email@example.com"
         />
-        {errors.email && <p className="mt-1 text-sm text-error-500">{errors.email}</p>}
-      </div>
-      
-      <div>
-        <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-          Subject
-        </label>
-        <motion.select
-          whileFocus={{ scale: 1.01 }}
-          transition={{ duration: 0.2 }}
-          id="subject"
-          name="subject"
-          value={formData.subject}
-          onChange={handleChange}
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500"
-        >
-          <option value="">Select a subject</option>
-          <option value="General Inquiry">General Inquiry</option>
-          <option value="Partnership">Partnership</option>
-          <option value="Support">Support</option>
-          <option value="Other">Other</option>
-        </motion.select>
+        {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
       </div>
       
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-          Message
+          Information You'd Like to Share
         </label>
         <motion.textarea
           whileFocus={{ scale: 1.01 }}
@@ -145,10 +133,10 @@ const ContactForm: React.FC = () => {
           value={formData.message}
           onChange={handleChange}
           rows={6}
-          className={`w-full px-4 py-3 rounded-lg border ${errors.message ? 'border-error-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-primary-500`}
-          placeholder="Your message here..."
+          className={`w-full px-4 py-3 rounded-lg border ${errors.message ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-primary-500`}
+          placeholder="Tell us about your interest in partnering, questions about our program, or how you'd like to get involved..."
         />
-        {errors.message && <p className="mt-1 text-sm text-error-500">{errors.message}</p>}
+        {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
       </div>
       
       <motion.div
@@ -160,7 +148,6 @@ const ContactForm: React.FC = () => {
           variant="primary" 
           size="lg" 
           className="w-full"
-          onClick={() => validate()}
         >
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </Button>

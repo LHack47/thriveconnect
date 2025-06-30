@@ -11,47 +11,16 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center mb-4">
               <LifeBuoy size={24} className="text-primary-500 mr-2" />
-              <span className="text-xl font-bold">Thrive Connect</span>
+              <span className="text-xl font-bold">ThriveConnect</span>
             </div>
             <p className="text-gray-400 mb-6">
-              Empowering connections and fostering growth in communities worldwide.
+              Connecting survivors of human trafficking to meaningful career opportunities through innovative technology and strategic partnerships.
             </p>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-
-            <li className="flex items-center">
-                <Mail size={18} className="text-primary-500 mr-2" />
-                <span className="text-gray-400">info@thriveconnect.com</span>
-              </li>
-            {/* <div className="flex space-x-4">
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-primary-500 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook size={20} />
-              </a>
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-primary-500 transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter size={20} />
-              </a>
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-primary-500 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
-              </a>
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-primary-500 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={20} />
-              </a>
-            </div> */}
+            <div className="flex items-center">
+              <Mail size={18} className="text-primary-500 mr-2" />
+              <span className="text-gray-400">jmerrick@empowerhernetwork.org</span>
+            </div>
           </div>
           
           {/* Quick Links */}
@@ -62,26 +31,21 @@ const Footer: React.FC = () => {
                 <Link to="/" className="text-gray-400 hover:text-primary-500 transition-colors">Home</Link>
               </li>
               <li>
+                <Link to="/about" className="text-gray-400 hover:text-primary-500 transition-colors">About Us</Link>
+              </li>
+              <li>
+                <Link to="/partners" className="text-gray-400 hover:text-primary-500 transition-colors">Partners</Link>
+              </li>
+              <li>
                 <Link to="/contact" className="text-gray-400 hover:text-primary-500 transition-colors">Contact Us</Link>
               </li>
             </ul>
           </div>
           
-          {/* Contact Info */}
+          {/* Newsletter */}
           <div>
-            <ul className="space-y-3">
-              {/* <li className="flex items-start">
-                <MapPin size={18} className="text-primary-500 mr-2 mt-1" />
-                <span className="text-gray-400">123 Innovation Way, San Francisco, CA 94107</span>
-              </li>
-              <li className="flex items-center">
-                <Phone size={18} className="text-primary-500 mr-2" />
-                <span className="text-gray-400">(123) 456-7890</span>
-              </li> */}
-              
-            </ul>
             <h3 className="text-lg font-semibold mb-4">Stay Updated</h3>
-            <p className="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates.</p>
+            <p className="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates on our pilot program and impact.</p>
             <form className="flex">
               <input 
                 type="email" 
@@ -98,17 +62,12 @@ const Footer: React.FC = () => {
               </button>
             </form>
           </div>
-          
-          {/* Newsletter
-          <div>
-            
-          </div> */}
         </div>
         
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} Thrive Connect. All rights reserved.
+              &copy; {new Date().getFullYear()} ThriveConnect. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-gray-400 hover:text-primary-500 transition-colors">Privacy Policy</a>
