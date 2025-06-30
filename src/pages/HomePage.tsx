@@ -151,7 +151,7 @@ const HomePage: React.FC = () => {
               Our Vision
             </h2>
             <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
-              We envision a world where every survivor of human trafficking has access to meaningful career opportunities that provide not just employment, but pathways to economic independence, personal growth, and community integration. Through innovative technology and strategic partnerships, we're building bridges between survivors and companies committed to inclusive hiring practices, creating a sustainable ecosystem of support and opportunity.
+              Thrive Connect is driving access to empowering careers with competitive wages for survivors, while engaging employers to fill critical roles and create safer, more sustainable workplaces. Together, these efforts fuel long-term success and collective impact.
             </p>
           </motion.div>
         </div>
@@ -424,7 +424,7 @@ const HomePage: React.FC = () => {
               <p className="text-gray-600 leading-relaxed">
                 Pro bono consulting services tasked with representing the corporate lens during the pilot by facilitating focus groups, gathering actionable insights, and strategizing on the right companies and quantity for corporate partnerships.
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
