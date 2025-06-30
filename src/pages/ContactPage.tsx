@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import ContactSection from '../components/ContactPageSections/ContactSection';
+import ContactForm from '../components/ContactPageSections/ContactForm';
 
 const ContactPage: React.FC = () => {
   return (
@@ -29,7 +29,7 @@ const ContactPage: React.FC = () => {
           </motion.div>
         </div>
       </div>
-      <ContactSection />
+      <ContactForm />
     </motion.div>
   );
 };
