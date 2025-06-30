@@ -144,7 +144,7 @@ const AboutPage: React.FC = () => {
               </p>
               
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                This collaborative approach ensures that survivors receive holistic support - from initial job readiness training through long-term career advancement - while providing companies with the framework and resources they need to implement trauma-informed hiring practices successfully.
+                This collaborative approach ensures that survivors receive holistic support - from initial job readiness training through long-term career advancement - while providing companies with the tools and support needed to connect successfully with non-traditional candidates.
               </p>
 
               <div className="bg-primary-50 rounded-lg p-6">
