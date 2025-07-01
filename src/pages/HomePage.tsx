@@ -99,7 +99,7 @@ const HomePage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
-              A tech-enabled ecosystem that links survivors of human trafficking to meaningful career paths with high demand roles at best-in-class companies.
+              A collective impact initiative leveraging a tech-enabled ecosystem to link survivors of human trafficking with meaningful career paths tied to high demand roles at best-in-class companies.
             </motion.p>
             
             <motion.div 
@@ -151,7 +151,7 @@ const HomePage: React.FC = () => {
               Our Vision
             </h2>
             <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
-              Thrive Connect is driving access to empowering careers with competitive wages for survivors, while engaging employers to fill critical roles and create safer, more sustainable workplaces. Together, these efforts fuel long-term success and collective impact.
+              Nationwide, trafficking survivors have access to empowering careers with competitive wages that fill high demand roles, solving a critical business need while building enduring financial independence that ends generational cycles of exploitation.
             </p>
           </motion.div>
         </div>
