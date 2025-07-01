@@ -73,7 +73,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6" name="contact" method="POST" data-netlify="true">
+    <form  className="space-y-6" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
       {submitSuccess && (
         <motion.div 
           className="bg-success-50 border border-success-200 text-success-700 px-4 py-3 rounded-lg mb-6"
@@ -81,7 +81,7 @@ const ContactForm: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Thank you for your message! Your email client should have opened with your message ready to send.
+          Thank you for your message! We will respond shortly.
         </motion.div>
       )}
       
