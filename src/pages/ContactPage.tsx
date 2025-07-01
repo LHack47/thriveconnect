@@ -29,7 +29,9 @@ const ContactPage: React.FC = () => {
           </motion.div>
         </div>
       </div>
-      <ContactForm />
+      <div style={{padding: '20px'}}>
+        <ContactForm />
+      </div>
     </motion.div>
   );
 };

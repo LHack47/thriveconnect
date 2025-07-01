@@ -51,14 +51,14 @@ const ContactForm: React.FC = () => {
       setIsSubmitting(true);
       
       // Create mailto link
-      const subject = encodeURIComponent('ThriveConnect Contact Form Submission');
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-      );
-      const mailtoLink = `mailto:jmerrick@empowerhernetwork.org?subject=${subject}&body=${body}`;
+      // const subject = encodeURIComponent('ThriveConnect Contact Form Submission');
+      // const body = encodeURIComponent(
+      //   `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      // );
+      // const mailtoLink = `mailto:jmerrick@empowerhernetwork.org?subject=${subject}&body=${body}`;
       
-      // Open email client
-      window.location.href = mailtoLink;
+      // // Open email client
+      // window.location.href = mailtoLink;
       
       // Simulate form submission completion
       setTimeout(() => {
@@ -73,7 +73,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6" name="contact" method="POST" data-netlify="true">
       {submitSuccess && (
         <motion.div 
           className="bg-success-50 border border-success-200 text-success-700 px-4 py-3 rounded-lg mb-6"
