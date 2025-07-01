@@ -49,31 +49,31 @@ const ContactForm: React.FC = () => {
     
     if (validate()) {
       setIsSubmitting(true);
-      
-      // Create mailto link
-      // const subject = encodeURIComponent('ThriveConnect Contact Form Submission');
-      // const body = encodeURIComponent(
-      //   `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-      // );
-      // const mailtoLink = `mailto:jmerrick@empowerhernetwork.org?subject=${subject}&body=${body}`;
-      
-      // // Open email client
-      // window.location.href = mailtoLink;
-      
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+        .then(() => {
+            setTimeout(() => {
+            setIsSubmitting(false);
+            setSubmitSuccess(true);
+            setFormData({ name: '', email: '', message: '' });
+            
+            // Reset success message after 5 seconds
+            setTimeout(() => setSubmitSuccess(false), 5000);
+          }, 1000);
+         })
+        .catch(error => alert(error));
+
       // Simulate form submission completion
-      setTimeout(() => {
-        setIsSubmitting(false);
-        setSubmitSuccess(true);
-        setFormData({ name: '', email: '', message: '' });
-        
-        // Reset success message after 5 seconds
-        setTimeout(() => setSubmitSuccess(false), 5000);
-      }, 1000);
     }
   };
 
   return (
     <form  className="space-y-6" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+      <input type="hidden" name="contact" value="contactForm" />
       {submitSuccess && (
         <motion.div 
           className="bg-success-50 border border-success-200 text-success-700 px-4 py-3 rounded-lg mb-6"
