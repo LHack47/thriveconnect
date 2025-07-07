@@ -143,7 +143,7 @@ const PartnersPage: React.FC = () => {
               </h2>
             </div>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Forward-thinking companies committed to inclusive hiring practices and creating meaningful career opportunities for survivors.
+              Forward-thinking companies committed to making safe and successful workplaces accessible to survivors.
             </p>
           </motion.div>
 
