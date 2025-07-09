@@ -157,7 +157,7 @@ const PartnersPage: React.FC = () => {
             <div className="max-w-2xl mx-auto">
               <h3 className="text-2xl font-bold text-gray-800 mb-4">Coming Soon</h3>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                We're currently building partnerships with leading companies across various industries who are committed to trauma-informed hiring practices and creating inclusive workplaces for survivors.
+                We're currently building partnerships with leading companies across various industries who are committed to making safe and successful workplaces accessible to survivors.
               </p>
               <p className="text-gray-600">
                 Our corporate partner showcase will feature company logos, success stories, and information about their commitment to survivor employment. Stay tuned for exciting announcements as we finalize these partnerships.
