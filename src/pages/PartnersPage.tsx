@@ -1,8 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Heart, Building, Users } from 'lucide-react';
+import UPSLogo from "../assets/UPSLogo.webp";
+import WFLogo from "../assets/WFLogo.webp";
+import HiltonLogo from "../assets/HiltonLogo.webp";
 
 const PartnersPage: React.FC = () => {
+   const corporatePartners = [
+    {
+      name: "UPS",
+      logo: UPSLogo,
+      description: "UPS is a global logistics and package delivery leader committed to innovation, sustainability, and empowering communities through reliable supply chain solutions. They are recruiting survivors in IT, Engineering, Warehouse, and Transporation.",
+      website: ""
+    },
+    {
+      name: "Wells Fargo",
+      logo: WFLogo,
+      description: "Wells Fargo & Company is a major American financial services firm, serving tens of millions of retail, commercial, and mortgage customers while offering a broad range of banking, investment, and wealth-management services. They are recruiting survivors in Analysis, Customer Success, and IT.",
+      website: ""
+    },
+    {
+      name: "Hilton",
+      logo: HiltonLogo,
+      description: "Hilton Worldwide Holdings Inc. is a leading global hospitality company, owning a portfolio of 24 distinct hotel and resort brands encompassing over 8,600 properties. They are recruiting survivors in Office Management, Customer Success, and Hospitality.",
+      website: ""
+    }
+  ];
+  
   const fundingPartners = [
     {
       name: "The Jensen Project",
@@ -49,6 +73,85 @@ const PartnersPage: React.FC = () => {
           </motion.div>
         </div>
       </div>
+        <section className="py-20 bg-white">
+              <div className="container mx-auto px-4 md:px-6">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.7 }}
+                  className="text-center mb-16"
+                >
+                  <div className="flex items-center justify-center mb-4">
+                    <Building className="text-primary-600 mr-3" size={32} />
+                    <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent">
+                      Corporate Partners
+                    </h2>
+                  </div>
+                  <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+                    Forward-thinking companies committed to creating meaningful career opportunities for survivors.
+                  </p>
+                </motion.div>
+                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  {corporatePartners.map((org, index) => (
+                    <motion.div
+                      key={index}
+                      className="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      whileHover={{ y: -5 }}
+                    >
+                      <div className="text-center mb-6">
+                        <motion.img
+                          src={org.logo}
+                          alt={`${org.name} logo`}
+                          className="h-20 w-auto mx-auto mb-4 object-contain"
+                          whileHover={{ scale: 1.05 }}
+                          transition={{ duration: 0.3 }}
+                        />
+                        <h3 className="text-2xl font-bold text-gray-800 mb-2">{org.name}</h3>
+                      </div>
+                      
+                      <p className="text-gray-600 mb-6 leading-relaxed">
+                        {org.description}
+                      </p>
+                      
+                      { org.website ? (
+                        <motion.a
+                        href={org.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium transition-colors duration-300"
+                        whileHover={{ x: 5 }}
+                      >
+                        Visit Website
+                        <ExternalLink size={16} className="ml-2" />
+                      </motion.a> ) : null }
+                    </motion.div> 
+                  ))}
+                </div>
+      {/* 
+                <motion.div
+                  className="bg-gray-50 rounded-xl p-12 shadow-md text-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.7 }}
+                >
+                  <div className="max-w-2xl mx-auto">
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4">Coming Soon</h3>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                      We're currently building partnerships with leading companies across various industries who are committed to making safe and successful workplaces accessible for survivors.
+                    </p>
+                    <p className="text-gray-600">
+                      Our corporate partner showcase will feature company logos, success stories, and information about their commitment to survivor employment. Stay tuned for exciting announcements as we finalize these partnerships.
+                    </p>
+                  </div>
+                </motion.div> */}
+              </div>
+            </section>
 
       {/* Funding Partners Section */}
       <section className="py-20 bg-white">
@@ -123,47 +226,6 @@ const PartnersPage: React.FC = () => {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Corporate Partners Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7 }}
-            className="text-center mb-16"
-          >
-            <div className="flex items-center justify-center mb-4">
-              <Building className="text-primary-600 mr-3" size={32} />
-              <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent">
-                Corporate Partners
-              </h2>
-            </div>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Forward-thinking companies committed to making safe and successful workplaces accessible to survivors.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="bg-white rounded-xl p-12 shadow-md text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7 }}
-          >
-            <div className="max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Coming Soon</h3>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                We're currently building partnerships with leading companies across various industries who are committed to making safe and successful workplaces accessible to survivors.
-              </p>
-              <p className="text-gray-600">
-                Our corporate partner showcase will feature company logos, success stories, and information about their commitment to survivor employment. Stay tuned for exciting announcements as we finalize these partnerships.
-              </p>
-            </div>
-          </motion.div>
         </div>
       </section>
 
