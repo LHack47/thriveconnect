@@ -37,17 +37,17 @@ const OnboardingPage: React.FC = () => {
     }
   };
 
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-    localStorage.removeItem('onboardingAuth');
-    setPassword('');
-    setCurrentStep(0);
-    setVideoWatched(false);
-    setQuizCompleted(false);
-    setQuizAnswers({});
-    setQuizScore(0);
-    setShowQuizResults(false);
-  };
+  // const handleLogout = () => {
+  //   setIsAuthenticated(false);
+  //   localStorage.removeItem('onboardingAuth');
+  //   setPassword('');
+  //   setCurrentStep(0);
+  //   setVideoWatched(false);
+  //   setQuizCompleted(false);
+  //   setQuizAnswers({});
+  //   setQuizScore(0);
+  //   setShowQuizResults(false);
+  // };
 
   const quizQuestions = [
     {
@@ -147,9 +147,9 @@ const OnboardingPage: React.FC = () => {
       content: "Welcome to the ThriveConnect onboarding experience. We're here to guide you through connecting with meaningful career opportunities."
     },
     {
-      title: "Our Mission",
+      title: "Your Training",
       icon: <Target className="text-primary-600" size={48} />,
-      content: "Our mission is to create a bridge between survivors of human trafficking and meaningful career opportunities at forward-thinking companies."
+      content: "Once you complete this video, you will be asked to complete a series of questions."
     },
     {
       title: "Your Journey",
@@ -188,9 +188,6 @@ const OnboardingPage: React.FC = () => {
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">
                   Introduction to ThriveConnect
                 </h3>
-                <p className="text-gray-600 mb-4">
-                  Watch this 5-minute video to learn about our mission and how we support survivors.
-                </p>
                 {!videoWatched ? (
                   <Button onClick={handleVideoComplete} className="mx-auto">
                     <Play className="mr-2" size={16} />
@@ -450,7 +447,7 @@ const OnboardingPage: React.FC = () => {
                   Onboarding Complete!
                 </h3>
                 <p className="text-green-700">
-                  You're all set to begin your journey with ThriveConnect. Our team will be in touch soon.
+                  You're all set to begin your journey with ThriveConnect. Please click here to submit your survey form.
                 </p>
               </motion.div>
             )}
