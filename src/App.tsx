@@ -8,6 +8,7 @@ import AboutPage from './pages/AboutPage';
 import PartnersPage from './pages/PartnersPage';
 import ContactPage from './pages/ContactPage';
 import OnboardingPage from './pages/OnboardingPage';
+import UPSCareersPage from './pages/UPSCareersPage';
 
 function App() {
   const location = useLocation();
@@ -23,6 +24,7 @@ function App() {
             <Route path="/partners" element={<PartnersPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/onboarding" element={<OnboardingPage />} />
+            <Route path="/ups-careers" element={<UPSCareersPage />} />
           </Routes>
         </AnimatePresence>
       </main>
