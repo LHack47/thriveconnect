@@ -6,19 +6,19 @@ import { Link } from 'react-router-dom';
 import ACLogo from "../assets/ACLogo.png";
 import ENLogo from "../assets/ENLogo.jpg";
 import RBILogo from "../assets/RBILogo.png";
-import UPSLogo from "../assets/UPSLogo.webp";
+//import UPSLogo from "../assets/UPSLogo.webp";
 //import WFLogo from "../assets/WFLogo.webp";
 import HiltonLogo from "../assets/HiltonLogo.webp";
 
 
 const HomePage: React.FC = () => {
     const corporatePartners = [
-    {
-      name: "UPS",
-      logo: UPSLogo,
-      description: "UPS is a global logistics and package delivery leader committed to innovation, sustainability, and empowering communities through reliable supply chain solutions. They are recruiting survivors in IT, Engineering, Warehouse, and Transporation.",
-      website: ""
-    },
+    // {
+    //   name: "UPS",
+    //   logo: UPSLogo,
+    //   description: "UPS is a global logistics and package delivery leader committed to innovation, sustainability, and empowering communities through reliable supply chain solutions. They are recruiting survivors in IT, Engineering, Warehouse, and Transporation.",
+    //   website: ""
+    // },
     // {
     //   name: "Wells Fargo",
     //   logo: WFLogo,

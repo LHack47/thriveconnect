@@ -1,18 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Heart, Building, Users } from 'lucide-react';
-import UPSLogo from "../assets/UPSLogo.webp";
+//import UPSLogo from "../assets/UPSLogo.webp";
 //import WFLogo from "../assets/WFLogo.webp";
 import HiltonLogo from "../assets/HiltonLogo.webp";
 
 const PartnersPage: React.FC = () => {
    const corporatePartners = [
-    {
-      name: "UPS",
-      logo: UPSLogo,
-      description: "UPS is a global logistics and package delivery leader committed to innovation, sustainability, and empowering communities through reliable supply chain solutions. They are recruiting survivors in IT, Engineering, Warehouse, and Transporation.",
-      website: ""
-    },
+    // {
+    //   name: "UPS",
+    //   logo: UPSLogo,
+    //   description: "UPS is a global logistics and package delivery leader committed to innovation, sustainability, and empowering communities through reliable supply chain solutions. They are recruiting survivors in IT, Engineering, Warehouse, and Transporation.",
+    //   website: ""
+    // },
     // {
     //   name: "Wells Fargo",
     //   logo: WFLogo,
