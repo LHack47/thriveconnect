@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Heart, Building, Users } from 'lucide-react';
 import UPSLogo from "../assets/UPSLogo.webp";
-import WFLogo from "../assets/WFLogo.webp";
+//import WFLogo from "../assets/WFLogo.webp";
 import HiltonLogo from "../assets/HiltonLogo.webp";
 
 const PartnersPage: React.FC = () => {
@@ -13,12 +13,13 @@ const PartnersPage: React.FC = () => {
       description: "UPS is a global logistics and package delivery leader committed to innovation, sustainability, and empowering communities through reliable supply chain solutions. They are recruiting survivors in IT, Engineering, Warehouse, and Transporation.",
       website: ""
     },
-    {
-      name: "Wells Fargo",
-      logo: WFLogo,
-      description: "Wells Fargo & Company is a major American financial services firm, serving tens of millions of retail, commercial, and mortgage customers while offering a broad range of banking, investment, and wealth-management services. They are recruiting survivors in Analysis, Customer Success, and IT.",
-      website: ""
-    },
+    // {
+    //   name: "Wells Fargo",
+    //   logo: WFLogo,
+    // eslint-disable-next-line no-irregular-whitespace
+    //   description: "Wells Fargo & Company is a major American financial services firm, serving tens of millions of retail, commercial, and mortgage customers while offering a broad range of banking, investment, and wealth-management services. They are recruiting survivors in Analysis, Customer Success, and IT.",
+    //   website: ""
+    // },
     {
       name: "Hilton",
       logo: HiltonLogo,
