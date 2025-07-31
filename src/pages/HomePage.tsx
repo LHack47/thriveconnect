@@ -182,6 +182,68 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+      {/* Value Prop Diagram Statement Section */}
+      <section id="valueprop" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent">
+              Why Thrive Connect?
+            </h2>
+            <div className="flex items-center justify-center">
+              <img src={VennDiagram} alt="Thrive Connect Venn Diagram" style={{maxWidth:"500px"}}/>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Collective Impact Initiative Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent">
+                Collective Impact Initiative
+              </h2>
+            </motion.div>
+
+            <motion.div
+              className="bg-gray-50 rounded-xl p-8 shadow-md"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                Our Collective Impact Initiative brings together leading nonprofit organizations, corporate partners, and technology solutions to create a comprehensive ecosystem for survivor employment. By combining our unique strengths and expertise, we're addressing the complex challenges that survivors face when transitioning to meaningful careers.
+              </p>
+              
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                This collaborative approach ensures that survivors receive holistic support - from initial job readiness training through long-term career advancement - while providing companies with the framework and resources they need to connect successfully with non-traditional candidates.
+              </p>
+
+              <div className="bg-primary-50 rounded-lg p-6">
+                <h3 className="text-xl font-bold text-primary-800 mb-3">Coming Soon</h3>
+                <p className="text-primary-700">
+                  We're currently developing comprehensive metrics and milestones to track our collective impact. Future updates will include detailed goals, success stories, and opportunities for additional investment and partnership. Stay tuned for exciting developments as we launch our pilot program in 2025.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* About Us - Backbone Organizations Section */}
       <section id="about" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
@@ -242,7 +304,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-             {/* Corporate Partners Section */}
+      {/* Corporate Partners Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
@@ -261,9 +323,6 @@ const HomePage: React.FC = () => {
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
               Forward-thinking companies committed to creating meaningful career opportunities for survivors.
             </p>
-             <div className="flex items-center justify-center mb-4">
-              <img src={VennDiagram} alt="Thrive Connect Venn Diagram" style={{maxWidth:"500px"}}/>
-            </div>
           </motion.div>
            {/* <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {corporatePartners.map((org, index) => (
@@ -325,47 +384,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Collective Impact Initiative Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7 }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent">
-                Collective Impact Initiative
-              </h2>
-            </motion.div>
-
-            <motion.div
-              className="bg-gray-50 rounded-xl p-8 shadow-md"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-            >
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Our Collective Impact Initiative brings together leading nonprofit organizations, corporate partners, and technology solutions to create a comprehensive ecosystem for survivor employment. By combining our unique strengths and expertise, we're addressing the complex challenges that survivors face when transitioning to meaningful careers.
-              </p>
-              
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                This collaborative approach ensures that survivors receive holistic support - from initial job readiness training through long-term career advancement - while providing companies with the framework and resources they need to connect successfully with non-traditional candidates.
-              </p>
-
-              <div className="bg-primary-50 rounded-lg p-6">
-                <h3 className="text-xl font-bold text-primary-800 mb-3">Coming Soon</h3>
-                <p className="text-primary-700">
-                  We're currently developing comprehensive metrics and milestones to track our collective impact. Future updates will include detailed goals, success stories, and opportunities for additional investment and partnership. Stay tuned for exciting developments as we launch our pilot program in 2025.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Partners - Funding Partners Section */}
       <section id="partners" className="py-20 bg-gray-50">
