@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Lock, Eye, EyeOff, CheckCircle, Users, Target, BookOpen, Trophy, Play, RotateCcw } from 'lucide-react';
+import { Lock, Eye, EyeOff, CheckCircle, Users, Target, BookOpen, Trophy, RotateCcw, Download, Shield } from 'lucide-react';
 import Button from '../components/Button';
+import SoftSkillsVideo from '../assets/SoftSkills.mp4';
+import ResourceGuide from '../assets/ResourceGuide.pdf';
 
 const OnboardingPage: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -14,6 +16,7 @@ const OnboardingPage: React.FC = () => {
   const [quizAnswers, setQuizAnswers] = useState<{ [key: number]: string }>({});
   const [quizScore, setQuizScore] = useState(0);
   const [showQuizResults, setShowQuizResults] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   // Check if user is already authenticated
   useEffect(() => {
@@ -102,7 +105,7 @@ const OnboardingPage: React.FC = () => {
     }
   ];
 
-  const handleVideoComplete = () => {
+  const handleVideoEnd = () => {
     setVideoWatched(true);
   };
 
@@ -157,7 +160,7 @@ const OnboardingPage: React.FC = () => {
       content: "Your journey with us includes skills assessment, training opportunities, career matching, and ongoing support throughout your career development."
     },
     {
-      title: "Success & Support",
+      title: "Success & Next Steps",
       icon: <Trophy className="text-primary-600" size={48} />,
       content: "We're committed to your long-term success. Our team provides continuous support, mentorship, and resources to help you thrive in your chosen career path."
     }
@@ -173,32 +176,48 @@ const OnboardingPage: React.FC = () => {
             </p>
             <div className="bg-gray-100 rounded-lg p-6">
               <div className="aspect-video bg-gray-900 rounded-lg relative mb-4">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Play className="text-white w-16 h-16 opacity-80" />
-                </div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-full p-2">
-                    <div className="h-2 bg-white/30 rounded-full">
-                      <div className="h-2 bg-white rounded-full w-full"></div>
-                    </div>
-                  </div>
-                </div>
+                <video
+                  ref={videoRef}
+                  className="w-full h-full rounded-lg"
+                  controls
+                  onEnded={handleVideoEnd}
+                  preload="metadata"
+                >
+                  <source src={SoftSkillsVideo} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <div className="text-center">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  Introduction to ThriveConnect
+                  Soft Skills Training Video
                 </h3>
                 {!videoWatched ? (
-                  <Button onClick={handleVideoComplete} className="mx-auto">
-                    <Play className="mr-2" size={16} />
-                    Watch Video (Demo)
-                  </Button>
+                  <p className="text-gray-600">
+                    Please watch the complete video to continue to the next step.
+                  </p>
                 ) : (
                   <div className="flex items-center justify-center text-green-600">
                     <CheckCircle className="mr-2" size={20} />
                     Video completed!
                   </div>
                 )}
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
+                  <Download className="text-blue-600 mx-auto mb-4" size={48} />
+                  <h3 className="text-xl font-bold text-blue-800 mb-2">
+                    Additional Resources
+                  </h3>
+                  <p className="text-blue-700 mb-4">
+                    Download our comprehensive Resource Guide to support your career journey.
+                  </p>
+                  <a
+                    href={ResourceGuide}
+                    download="ThriveConnect_Resource_Guide.pdf"
+                    className="inline-flex items-center px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors duration-200 font-medium"
+                  >
+                    <Download className="mr-2" size={16} />
+                    Download Resource Guide
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -440,15 +459,75 @@ const OnboardingPage: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="bg-green-50 border border-green-200 rounded-lg p-6 text-center"
+                className="space-y-6"
               >
-                <CheckCircle className="text-green-600 mx-auto mb-4" size={48} />
-                <h3 className="text-xl font-bold text-green-800 mb-2">
-                  Onboarding Complete!
-                </h3>
-                <p className="text-green-700">
-                  You're all set to begin your journey with ThriveConnect. Please click here to submit your survey form.
-                </p>
+                <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                  <div className="text-center mb-6">
+                    <Shield className="text-purple-600 mx-auto mb-4" size={48} />
+                    <h3 className="text-xl font-bold text-purple-800 mb-4">
+                      Your Privacy Matters at Thrive Connect
+                    </h3>
+                  </div>
+                  <div className="text-left max-w-3xl mx-auto">
+                    <p className="text-purple-700 mb-6 leading-relaxed">
+                      At Thrive Connect, your safety, privacy, and autonomy come first. We are committed to protecting your personal information and ensuring you remain in control at every step. We collect only the data needed to support your job search and never share it without your clear, informed consent.
+                    </p>
+                    
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold text-purple-800 mb-4">Key Commitments:</h4>
+                      <ul className="space-y-3 text-purple-700">
+                        <li className="flex items-start">
+                          <span className="text-purple-600 mr-3 mt-1">•</span>
+                          <div>
+                            <strong>You're in control:</strong> You can access, update, or delete your data anytime.
+                          </div>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-purple-600 mr-3 mt-1">•</span>
+                          <div>
+                            <strong>Your privacy is protected:</strong> We use encrypted systems and only allow access based on role-specific permissions.
+                          </div>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-purple-600 mr-3 mt-1">•</span>
+                          <div>
+                            <strong>No forced sharing:</strong> We never share your data with employers or partners unless you choose to.
+                          </div>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-purple-600 mr-3 mt-1">•</span>
+                          <div>
+                            <strong>Your feedback is confidential:</strong> Surveys and feedback forms are anonymous and used only to improve our services.
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    <div className="text-center bg-purple-100 rounded-lg p-4">
+                      <p className="text-purple-800">
+                        Have questions or want to update your information? Email us anytime at{' '}
+                        <a 
+                          href="mailto:info@thriveconnectcollective.org"
+                          className="font-medium text-purple-600 hover:text-purple-800 underline"
+                        >
+                          info@thriveconnectcollective.org
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+                  <CheckCircle className="text-green-600 mx-auto mb-4" size={48} />
+                  <h3 className="text-xl font-bold text-green-800 mb-2">
+                    Onboarding Complete!
+                  </h3>
+                  <p className="text-green-700 mb-4">
+                    You're all set to begin your journey with ThriveConnect. Please <a href="https://airtable.com/appioyK5O04S6wMV7/pagemKqCoIlUhTm8a/form" target="_blank" rel="noopener noreferrer" className="font-medium text-purple-600 hover:text-purple-800 underline">click here</a> to submit your survey form.
+                  </p>
+                </div>
+                
+                
+               
               </motion.div>
             )}
           </motion.div>
