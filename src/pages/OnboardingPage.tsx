@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Lock, Eye, EyeOff, CheckCircle, Users, Target, BookOpen, Trophy, RotateCcw, Download, Shield } from 'lucide-react';
 import Button from '../components/Button';
-import SoftSkillsVideo from '../assets/SoftSkills.mp4';
 import ResourceGuide from '../assets/ResourceGuide.pdf';
 
 const OnboardingPage: React.FC = () => {
@@ -16,7 +15,6 @@ const OnboardingPage: React.FC = () => {
   const [quizAnswers, setQuizAnswers] = useState<{ [key: number]: string }>({});
   const [quizScore, setQuizScore] = useState(0);
   const [showQuizResults, setShowQuizResults] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   // Check if user is already authenticated
   useEffect(() => {
@@ -54,58 +52,58 @@ const OnboardingPage: React.FC = () => {
 
   const quizQuestions = [
     {
-      question: "What is the primary mission of ThriveConnect?",
+      question: "Which statement best describes the difference between hard skills and soft skills?",
       options: [
-        "To provide temporary shelter for survivors",
-        "To create a bridge between survivors and meaningful career opportunities",
-        "To offer legal services to survivors",
-        "To provide counseling services only"
+        "Hard skills are about personality; soft skills are about technical ability",
+        "Hard skills are measurable technical abilities; soft skills are about communication, adaptability, and working well with others",
+        "Hard skills are optional; soft skills are required for all jobs",
+        "Hard skills can't be learned; soft skills can"
       ],
       correct: 1
     },
     {
-      question: "Which of the following is a key component of the ThriveConnect journey?",
+      question: "In the Time Management section, what does \"being on time\" mean in the workplace?",
       options: [
-        "Skills assessment and training opportunities",
-        "Career matching and ongoing support",
-        "Continuous mentorship and resources",
-        "All of the above"
+        "Walking in the door exactly at your start time",
+        "Being at your desk or station, ready to work, by your scheduled start time",
+        "Arriving 10 minutes early every day",
+        "Logging in to your phone or computer before leaving home"
       ],
-      correct: 3
+      correct: 1
     },
     {
-      question: "What type of companies does ThriveConnect partner with?",
+      question: "Emotional Intelligence (EQ) involves two main parts: managing your own emotions and what else?",
       options: [
-        "Only tech companies",
-        "Small local businesses exclusively",
-        "Forward-thinking companies with high-demand roles",
-        "Non-profit organizations only"
+        "Making sure no one else gets upset",
+        "Recognizing and responding to the emotions of others",
+        "Avoiding all emotional conversations at work",
+        "Reading facial expressions only"
+      ],
+      correct: 1
+    },
+    {
+      question: "When receiving constructive feedback, what mindset should you have to handle it well?",
+      options: [
+        "Defend your work so the boss knows you're capable",
+        "Take it as a personal attack and avoid the person for a while",
+        "View it as a tool for growth and ask clarifying questions if needed",
+        "Ignore it and continue working as before"
       ],
       correct: 2
     },
     {
-      question: "What is the ultimate goal of ThriveConnect's programs?",
+      question: "Which of these is an example of showing leadership without having a formal title?",
       options: [
-        "Short-term employment placement",
-        "Building enduring financial independence that ends generational cycles of exploitation",
-        "Providing one-time job training",
-        "Connecting survivors with temporary work"
-      ],
-      correct: 1
-    },
-    {
-      question: "How does ThriveConnect support survivors throughout their career development?",
-      options: [
-        "Only during the initial placement",
-        "Through continuous support, mentorship, and resources",
-        "By providing financial assistance only",
-        "Through legal advocacy exclusively"
+        "Waiting for instructions before starting a task",
+        "Offering solutions when problems arise and supporting team members during stressful moments",
+        "Working only on your assigned duties and avoiding extra work",
+        "Focusing on your own success instead of the team's"
       ],
       correct: 1
     }
   ];
 
-  const handleVideoEnd = () => {
+  const markVideoAsWatched = () => {
     setVideoWatched(true);
   };
 
@@ -176,25 +174,32 @@ const OnboardingPage: React.FC = () => {
             </p>
             <div className="bg-gray-100 rounded-lg p-6">
               <div className="aspect-video bg-gray-900 rounded-lg relative mb-4">
-                <video
-                  ref={videoRef}
+                <iframe
                   className="w-full h-full rounded-lg"
-                  controls
-                  onEnded={handleVideoEnd}
-                  preload="metadata"
-                >
-                  <source src={SoftSkillsVideo} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                  src="https://www.youtube.com/embed/ab-J7mDAUDM?enablejsapi=1"
+                  title="Soft Skills Training Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
               <div className="text-center">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">
                   Soft Skills Training Video
                 </h3>
                 {!videoWatched ? (
-                  <p className="text-gray-600">
-                    Please watch the complete video to continue to the next step.
-                  </p>
+                  <div className="space-y-4">
+                    <p className="text-gray-600">
+                      Please watch the complete video to continue to the next step.
+                    </p>
+                    <Button
+                      onClick={markVideoAsWatched}
+                      className="mx-auto"
+                      size="sm"
+                    >
+                      Mark Video as Watched
+                    </Button>
+                  </div>
                 ) : (
                   <div className="flex items-center justify-center text-green-600">
                     <CheckCircle className="mr-2" size={20} />
@@ -241,7 +246,7 @@ const OnboardingPage: React.FC = () => {
                 <div className="space-y-6">
                   {quizQuestions.map((question, index) => (
                     <div key={index} className="bg-white p-4 rounded-lg shadow-sm">
-                      <h4 className="font-medium text-gray-800 mb-3">
+                      <h4 className="font-medium text-gray-800 mb-3 text-left">
                         {index + 1}. {question.question}
                       </h4>
                       <div className="space-y-2">
@@ -255,7 +260,7 @@ const OnboardingPage: React.FC = () => {
                               onChange={(e) => handleQuizAnswer(index, e.target.value)}
                               className="text-primary-600 focus:ring-primary-500"
                             />
-                            <span className="text-gray-700">{option}</span>
+                            <span className="text-gray-700 text-left">{option}</span>
                           </label>
                         ))}
                       </div>
